@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 # Install Python dependencies
-COPY backend/pyproject.toml backend/uv.lock ./
+# README.md is required by hatchling at build time
+COPY backend/pyproject.toml backend/uv.lock backend/README.md ./
 RUN uv sync --frozen --no-dev
 
 # Copy backend source
