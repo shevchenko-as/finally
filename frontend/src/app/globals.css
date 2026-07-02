@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-primary:   #0d1117;
+  --color-bg-secondary: #1a1a2e;
+  --color-accent-gold:  #ecad0a;
+  --color-accent-green: #02de02;
+  --color-accent-orange:#de9802;
+  --color-border:       #30363d;
+  --color-text-primary: #e6edf3;
+  --color-text-muted:   #8b949e;
+  --color-price-up:     #02de02;
+  --color-price-down:   #f85149;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@keyframes flash-up {
+  0% { background: #02de0233; }
+  100% { background: transparent; }
+}
+
+@keyframes flash-down {
+  0% { background: #f8514933; }
+  100% { background: transparent; }
+}
+
+.flash-up {
+  animation: flash-up 500ms ease-out;
+}
+
+.flash-down {
+  animation: flash-down 500ms ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Panel styles */
+.panel {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.panel-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+/* Table styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data-table th {
+  padding: 4px 8px;
+  text-align: right;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th:first-child {
+  text-align: left;
+}
+
+.data-table td {
+  padding: 5px 8px;
+  text-align: right;
+  border-bottom: 1px solid #21262d;
+}
+
+.data-table td:first-child {
+  text-align: left;
+}
+
+.data-table tr:hover td {
+  background-color: #21262d;
+}
+
+.data-table tr.selected td {
+  background-color: #1c2a3a;
+}
+
+/* Price colors */
+.price-up {
+  color: var(--color-price-up);
+}
+
+.price-down {
+  color: var(--color-price-down);
+}
+
+.price-flat {
+  color: var(--color-text-muted);
+}
+
+/* Button styles */
+.btn {
+  padding: 5px 14px;
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-buy {
+  background-color: var(--color-accent-orange);
+  color: #000;
+}
+
+.btn-sell {
+  background-color: var(--color-price-down);
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-gold);
+  color: #000;
+}
+
+/* Input styles */
+.terminal-input {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 5px 8px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.terminal-input:focus {
+  border-color: var(--color-accent-gold);
+}
+
+.terminal-input::placeholder {
+  color: var(--color-text-muted);
+}
