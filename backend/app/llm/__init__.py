@@ -21,7 +21,7 @@ __all__ = [
     "chat_completion",
 ]
 
-_MODEL = "openrouter/openai/gpt-oss-120b"
+_MODEL = "groq/llama-3.1-70b-versatile"
 _MOCK_RESPONSE = "[MOCK] I'm the FinAlly AI assistant. How can I help?"
 
 
@@ -125,7 +125,7 @@ async def chat_completion(
         model=_MODEL,
         messages=messages,
         response_format={"type": "json_object"},
-        api_key=os.environ["OPENROUTER_API_KEY"],
+        api_key=os.environ["GROQ_API_KEY"],
     )
 
     raw_content: str = response.choices[0].message.content or ""

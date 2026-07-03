@@ -6,7 +6,7 @@ services:
     port: 8000
     healthCheckPath: /api/health
     envVars:
-      - key: OPENROUTER_API_KEY
+      - key: GROQ_API_KEY
         sync: false          # you enter this manually in the Render dashboard
       - key: MASSIVE_API_KEY
         value: ""            # leave empty to use the simulator
