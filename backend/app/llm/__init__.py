@@ -21,7 +21,7 @@ __all__ = [
     "chat_completion",
 ]
 
-_MODEL = "groq/llama-3.1-70b-versatile"
+_MODEL = "groq/llama-3.3-70b-versatile"
 _MOCK_RESPONSE = "[MOCK] I'm the FinAlly AI assistant. How can I help?"
 
 
